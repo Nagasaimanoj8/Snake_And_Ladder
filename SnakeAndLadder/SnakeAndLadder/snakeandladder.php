@@ -26,11 +26,23 @@ class snake
          $option = rand(1, 3);
          switch ($option) {
              case snake::LADDER:
-                 echo " player on Ladder move to next position " . $this->position += $rollDie;
+                 echo " player on Ladder move to next position "; 
+                 if( $this->position + $rollDie>100)
+                 {
+                    $this->position=$this->position;
+                 }
+                 else{
+                    $this->position+=$rollDie;
+                 }
                  echo "\n";
                  break;
              case snake::SNAKE:
-                 echo " player on snake move to previous Position " . $this->position -= $rollDie;
+                 echo " player on snake move to previous Position " ;
+                  $this->position -= $rollDie;
+                  if($this->position<=0)
+                  {
+                    $this->position=0;
+                  }
                  echo "\n";
                  break;
              default:
