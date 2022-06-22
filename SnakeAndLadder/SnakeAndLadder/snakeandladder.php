@@ -6,6 +6,7 @@ class snake
     const SNAKE = 2;
     const NOPLAY = 1;
     public $position = 0;
+    public $count =0;//Use for roll count
 
  
     /*function for palyer roll a die and
@@ -30,6 +31,7 @@ class snake
             $rollDie=$this->snakeandladder();
         
         $option = rand(1, 3);
+        $this->count++;
          switch ($option) {
              case snake::LADDER:
                  echo " player on Ladder move to next position "; 
@@ -57,7 +59,8 @@ class snake
          }
          echo "Current Position is:" . $this->position . "\n";
         }
-
+        echo "Player won the game". "\n";
+        echo "Time of the die Rolls:".$this->count;
     }
 }
 $obj = new snake();
