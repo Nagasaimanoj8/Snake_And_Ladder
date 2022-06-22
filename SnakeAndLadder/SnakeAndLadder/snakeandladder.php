@@ -2,9 +2,9 @@
 //UC1
 class snake
 {
-    const LADDER = 1;
-    const SNAKE = 2;
-    const NOPLAY = 0;
+    const LADDER = 3;
+    const SNAKE = 1;
+    const NOPLAY = 2;
     public $position = 0;
 
  
@@ -14,32 +14,45 @@ class snake
     {
         $startPosition = 0;
         echo "Player at starting position:" . $startPosition . "\n";
-        echo "Rolling a die ";
+        echo "Rolling a die \n";
         $rollDie = rand(1, 6);
        // $startPosition+=$rollDie;
        // echo "current position is:".$startPosition;
-        $this->nextMove($rollDie);
-    }
+       echo "getting a die number is:".$rollDie;
+       return $rollDie;
+
+        }
      //create function to check option for NO Play,Ladder,Snake
-     public function nextMove($rollDie)
+     public function nextMove()
      {
-         $option = rand(0, 2);
+        while($this->position!=100)
+        {
+            $rollDie=$this->snakeandladder();
+        
+         $option = rand(1, 3);
          switch ($option) {
              case snake::LADDER:
-                 echo " player on Ladder move to next position " . $this->position += $rollDie;
+                 echo " \n player on Ladder move to next position " . $this->position += $rollDie;
                  echo "\n";
+                 echo "Current Position is:" . $this->position . "\n";
                  break;
+                 
              case snake::SNAKE:
-                 echo " player on snake move to previous Position " . $this->position -= $rollDie;
+                 $this->position -= $rollDie;
+                 echo "Current Position is:" . $this->position . "\n";
                  echo "\n";
                  break;
+                 
              default:
                  echo " No Play " . $this->position = $this->position;
                  echo "\n";
-         }
-         echo "Current Position is:" . $this->position . "\n";
+                 echo "Current Position is:" . $this->position . "\n";
+            }
+        } 
      }
 }
 $obj = new snake();
-$obj->snakeandladder();
+//$obj->snakeandladder();
+$obj->nextMove();
+echo"PlayerWon";
 ?>
