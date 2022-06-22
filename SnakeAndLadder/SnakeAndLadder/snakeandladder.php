@@ -59,12 +59,12 @@ class snake
          }
          echo "Current Position is:" . $this->position . "\n";
         }
-        echo "Player won the game". "\n";
+       
         echo "Time of the die Rolls:".$this->count;
     }
 }
 $obj = new snake();
 $obj->snakeandladder();
 $obj->nextMove();
-echo "player won";
+echo "\n"."Player won the game" ;
 ?>
