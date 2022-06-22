@@ -2,9 +2,9 @@
 //UC1
 class snake
 {
-    const LADDER = 1;
+    const LADDER = 3;
     const SNAKE = 2;
-    const NOPLAY = 0;
+    const NOPLAY = 1;
     public $position = 0;
 
  
@@ -23,7 +23,7 @@ class snake
      //create function to check option for NO Play,Ladder,Snake
      public function nextMove($rollDie)
      {
-         $option = rand(0, 2);
+         $option = rand(1, 3);
          switch ($option) {
              case snake::LADDER:
                  echo " player on Ladder move to next position " . $this->position += $rollDie;
