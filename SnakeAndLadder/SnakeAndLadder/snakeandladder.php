@@ -12,12 +12,12 @@ class snake
      get number between 1 to 6*/
     public function snakeandladder()
     {
-        $startedPosition = 0;
-        echo "Player at starting position:" . $startedPosition . "\n";
+        $startPosition = 0;
+        echo "Player at starting position:" . $startPosition . "\n";
         echo "Rolling a die ";
         $rollDie = rand(1, 6);
-       // $startedPosition+=$rollDie;
-       // echo "current position is:".$startedPosition;
+       // $startPosition+=$rollDie;
+       // echo "current position is:".$startPosition;
         $this->nextMove($rollDie);
     }
      //create function to check option for NO Play,Ladder,Snake
