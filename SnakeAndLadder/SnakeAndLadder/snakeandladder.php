@@ -10,7 +10,7 @@ class snake
  
     /*function for palyer roll a die and
      get number between 1 to 6*/
-    public function snakeandladder()
+    function snakeandladder()
     {
         $startPosition = 0;
         echo "Player at starting position:" . $startPosition . "\n";
@@ -18,12 +18,18 @@ class snake
         $rollDie = rand(1, 6);
        // $startPosition+=$rollDie;
        // echo "current position is:".$startPosition;
-        $this->nextMove($rollDie);
+       // $this->nextMove($rollDie);
+       echo "getting a die number is:".$rollDie;
+       return $rollDie;
     }
      //create function to check option for NO Play,Ladder,Snake
-     public function nextMove($rollDie)
+     public function nextMove()
      {
-         $option = rand(1, 3);
+        while($this->position!=100)
+        {
+            $rollDie=$this->snakeandladder();
+        
+        $option = rand(1, 3);
          switch ($option) {
              case snake::LADDER:
                  echo " player on Ladder move to next position "; 
@@ -50,8 +56,12 @@ class snake
                  echo "\n";
          }
          echo "Current Position is:" . $this->position . "\n";
-     }
+        }
+
+    }
 }
 $obj = new snake();
 $obj->snakeandladder();
+$obj->nextMove();
+echo "player won";
 ?>
